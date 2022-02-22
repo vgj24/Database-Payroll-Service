@@ -11,7 +11,6 @@ salary money not null,
 start date not null
 )
 
-select *from employee_payroll
 
 --UC3 useCRUD operations insert values into table
 insert into employee_payroll values
@@ -21,3 +20,5 @@ insert into employee_payroll values
 ('Prakash',9000.0,'2021-11-28'),
 ('Priya',15000,'2022-03-11')
 
+--Retetive data from table using Select query
+select *from employee_payroll
