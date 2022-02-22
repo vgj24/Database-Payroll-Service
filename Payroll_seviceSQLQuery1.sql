@@ -64,3 +64,17 @@ insert into employee_payroll (name,salary,start,gender) values
 
 --alter table employee_payroll add constraint not null default 'others'
 alter table employee_payroll add Department varchar(20) not null default 'others'
+
+--UC9 Ability to extend employee_payroll table to have Basic Pay, Deductions, Taxable Pay, Income Tax, Net Pay
+alter table employee_payroll add 
+basic_pay money,
+Deduction money,
+taxable_pay money
+
+select *from employee_payroll
+sp_rename 'employee_payroll.salary','net_pay'
+
+insert into employee_payroll(name,net_pay,start,gender,Department)values('Terrisa',50000,getDate(),'F','Sales')
+insert into employee_payroll(name,net_pay,start,gender,Department)values('Terrisa',50000,getDate(),'F','Marketing')
+
+
