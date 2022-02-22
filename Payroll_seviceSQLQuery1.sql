@@ -54,3 +54,13 @@ select sum(salary) as 'sum' from employee_payroll where gender='F'
 select gender, sum(salary) as 'Sum of salary',avg(salary) as'Average Salary',
 min(salary) as 'minimum salary',max(salary) as'Maximum Salary'  from employee_payroll group by gender
 
+--UC8 Ability to extend employee_payroll data to store employee information like employee phone, address and department -
+-- Ensure employee department is non nullable fields. Add Default Value for address field
+alter table employee_payroll add address varchar(50) 
+alter table employee_payroll add constraint DF_AddressConstraint  default 'india' for address
+insert into employee_payroll (name,salary,start,gender) values
+('Sudhir',13000.0,'2019-11-28','M')
+
+
+--alter table employee_payroll add constraint not null default 'others'
+alter table employee_payroll add Department varchar(20) not null default 'others'
