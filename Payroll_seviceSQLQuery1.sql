@@ -19,10 +19,10 @@ insert into employee_payroll values
 ('Hari',14312.56,'2022-02-16'),
 ('Prakash',9000.0,'2021-11-28'),
 ('Priya',15000,'2022-03-01')
-
-insert into employee_payroll values
 ('Neha',10000,'2022-03-01'),
 ('Shriya',20000,'2022-03-01')
+
+
 
 
 --UC4 Retetive data from table using Select query
@@ -37,3 +37,19 @@ select salary as 'payment' from employee_payroll where name='Ramesh'
 select *from employee_payroll where start between '2020-01-01' and getdate()
 --using cast to getdate
 select cast(getdate() as varchar(50))
+
+--UC6 Ability to add Gender to Employee Payroll Table and Update the Rows to reflect the correct Employee Gender
+alter table employee_payroll add gender char(1)
+
+insert into employee_payroll (name,salary,start,gender) values
+('Divya',9000.0,'2019-1-28','F')
+
+insert into employee_payroll values ('Gopal',30000,getDate(),'M')
+
+
+update employee_payroll set gender='M' where name='Hari'
+update employee_payroll set gender='M'where id in(1,2)
+update employee_payroll set gender='M' where name in('Prakash')
+update employee_payroll set gender='F' where id in(5,6,7)
+select *from employee_payroll
+
