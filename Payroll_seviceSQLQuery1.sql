@@ -22,9 +22,6 @@ insert into employee_payroll values
 ('Neha',10000,'2022-03-01'),
 ('Shriya',20000,'2022-03-01')
 
-
-
-
 --UC4 Retetive data from table using Select query
 select *from employee_payroll
 
@@ -46,10 +43,14 @@ insert into employee_payroll (name,salary,start,gender) values
 
 insert into employee_payroll values ('Gopal',30000,getDate(),'M')
 
-
 update employee_payroll set gender='M' where name='Hari'
 update employee_payroll set gender='M'where id in(1,2)
 update employee_payroll set gender='M' where name in('Prakash')
 update employee_payroll set gender='F' where id in(5,6,7)
 select *from employee_payroll
+
+--UC7 Ability to find sum, average, min, max and number of male and female employees
+select sum(salary) as 'sum' from employee_payroll where gender='F'
+select gender, sum(salary) as 'Sum of salary',avg(salary) as'Average Salary',
+min(salary) as 'minimum salary',max(salary) as'Maximum Salary'  from employee_payroll group by gender
 
