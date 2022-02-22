@@ -13,3 +13,11 @@ start date not null
 
 select *from employee_payroll
 
+--UC3 useCRUD operations insert values into table
+insert into employee_payroll values
+('Ram',20000,'2018-03-01'),
+('Ramesh',16345.90,'2019-02-07'),
+('Hari',14312.56,'2022-02-16'),
+('Prakash',9000.0,'2021-11-28'),
+('Priya',15000,'2022-03-11')
+
